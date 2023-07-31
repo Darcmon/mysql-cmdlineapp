@@ -213,11 +213,11 @@ const addEmployee = () => {
               let first = res.first_name;
               let last = res.last_name;
               let role = res.role;
-              let nManager = res.manager;
+              let manager = res.manager;
               db.query(
                 "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)",
-                [first, last, role, nManager],
-                (err, insertRes) => {
+                [first, last, role, manager],
+                (err) => {
                   if (err) throw err;
                   console.log("Employee added successfully!");
                   init();
